@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+// Hàm để in các số là bội của 7
+void printMultiplesOfSeven() {
+    int start = 10; // Số nguyên nhỏ nhất có hai chữ số
+    int end = 99;   // Số nguyên lớn nhất có hai chữ số
+    printf("Cac so nguyen co 2 chu so và la boi cua 7:  ");
+    // Vòng lặp từ 10 đến 99
+    for (int i = start; i <= end; i++) {
+        if (i % 7 == 0) { // Kiểm tra i có phải là bội của 7 không
+            printf("%d\t", i);
+        }
+    }
+}
+
+int main() {
+    // Gọi hàm để in các bội số của 7
+    printMultiplesOfSeven();
+    return 0;
+}
