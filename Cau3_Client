@@ -1,0 +1,18 @@
+from ._anvil_designer import Form1Template
+from anvil import *
+import anvil.server
+
+class Form1(Form1Template):
+  def __init__(self, **properties):
+    # Set Form properties and Data Bindings.
+    self.init_components(**properties)
+
+    # Any code you write here will run before the form opens.
+
+
+  def button_sort_click_click(self, **event_args):
+    numbers = self.text_box_numbers.text
+    sorted_numbers = anvil.server.call('insertion_sort', numbers)
+    self.label_result.text = "Các số nguyên theo thứ tự tăng dần:   " + '  '.join(map(str, sorted_numbers))
+    sorteddes_numbers = anvil.server.call('insertion_sort_descending', numbers)
+    self.lblSorted.text = "Các số nguyên theo thứ tự giảm dần:   " + '  '.join(map(str, sorteddes_numbers))
